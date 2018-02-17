@@ -1,0 +1,5 @@
+#!/bin/bash
+while ! (docker stats --no-stream "$1" &>/dev/null) ; do
+    sleep 1
+done
+

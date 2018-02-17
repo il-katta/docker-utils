@@ -1,0 +1,2 @@
+#!/bin/sh
+docker run -ti --rm -e "HOSTNAME=$1"  -e TIMEOUT=1 willfarrell/ping

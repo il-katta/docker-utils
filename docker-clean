@@ -1,0 +1,6 @@
+#!/bin/sh
+docker system prune -a -f
+
+docker rm $(docker ps -qa)
+
+docker rmi $(docker images -qa)

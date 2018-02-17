@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+
+docker exec mysql sh -c 'exec mysqldump --lock-all-tables --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > $1
+
+exit 0
+
+docker run -ti \
+  --name mariadb \
+  --link mysql:mysql \
+  mariadb:10.1.23 \
+  mysqldump \
+    -u root \
+    -p"$MYSQL_ROOT_PASSWORD" \
+    -h mysql \
+    --lock-all-tables --all-databases > $1
+
