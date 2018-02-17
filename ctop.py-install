@@ -1,0 +1,5 @@
+#!/bin/sh
+# https://pypi.python.org/pypi/ctop
+curl -sSl https://raw.githubusercontent.com/yadutaf/ctop/master/cgroup_top.py > /usr/local/bin/ctop.py
+chmod +x /usr/local/bin/ctop.py
+/usr/local/bin/ctop.py
