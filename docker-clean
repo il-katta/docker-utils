@@ -4,3 +4,5 @@ docker system prune -a -f
 docker rm $(docker ps -qa)
 
 docker rmi $(docker images -qa)
+
+exit 0
