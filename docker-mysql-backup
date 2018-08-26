@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+docker exec mysql sh -c "mysql -uroot -p\$MYSQL_ROOT_PASSWORD -e 'show databases' | \
+	grep -Ev '(Database|information_schema|performance_schema)' | \
+	while read dbname; do \
+		mysqldump -uroot -p\$MYSQL_ROOT_PASSWORD --complete-insert \"\$dbname\" > \"/backups/\$dbname.sql\" ;\
+	done"
