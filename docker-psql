@@ -1,4 +1,0 @@
-#!/bin/bash
-DOCKER_POSTGRES="${1-postgres}"
-shift
-docker run -it --rm --link ${DOCKER_POSTGRES}:postgres postgres:9.6.2 psql -h postgres -U postgres $@

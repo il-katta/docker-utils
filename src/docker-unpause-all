@@ -1,0 +1,2 @@
+#!/bin/bash
+docker ps -q -f status=paused | xargs -L 1 docker unpause

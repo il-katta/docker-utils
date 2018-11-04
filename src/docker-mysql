@@ -1,0 +1,4 @@
+#!/bin/sh
+DOCKER_MYSQL="${1-mysql}"
+# shellcheck disable=SC2016
+docker run -it --link "${DOCKER_MYSQL}:mysql" --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'

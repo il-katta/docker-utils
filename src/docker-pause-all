@@ -1,0 +1,2 @@
+#!/bin/bash
+docker ps -q -f status=running | xargs -L 1 docker pause

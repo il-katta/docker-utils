@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
-
+# shellcheck disable=SC2016
 docker exec mysql sh -c 'exec mysqldump --lock-all-tables --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' | gzip > "$1"

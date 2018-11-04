@@ -1,0 +1,5 @@
+#!/bin/bash
+docker stop -t 20 "$1" &
+docker rm -v -f "$1" &>/dev/null
+wait
+exit 0

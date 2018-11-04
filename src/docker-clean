@@ -1,0 +1,10 @@
+#!/bin/sh
+docker system prune -a -f
+
+docker volume prune -f
+
+docker ps -qa | xargs -L 1 docker rm
+
+docker images -qa | xargs -L 1 docker rmi
+
+exit 0
