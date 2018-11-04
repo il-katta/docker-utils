@@ -64,6 +64,50 @@ pipeline {
                                 ),
                             ],
                             verbose: true
+                        ),
+                        sshPublisherDesc(
+                            configName: 'srv.loopback.it:/usr/local',
+                            transfers: [
+                                sshTransfer(
+                                    remoteDirectory: 'bin',
+                                    removePrefix: 'dist',
+                                    sourceFiles: "dist/*",
+                                ),
+                            ],
+                            verbose: true
+                        ),
+                        sshPublisherDesc(
+                            configName: 'srv.runme.sh:/usr/local',
+                            transfers: [
+                                sshTransfer(
+                                    remoteDirectory: 'bin',
+                                    removePrefix: 'dist',
+                                    sourceFiles: "dist/*",
+                                ),
+                            ],
+                            verbose: true
+                        ),
+                        sshPublisherDesc(
+                            configName: 'dc-1.lan:/usr/local',
+                            transfers: [
+                                sshTransfer(
+                                    remoteDirectory: 'bin',
+                                    removePrefix: 'dist',
+                                    sourceFiles: "dist/*",
+                                ),
+                            ],
+                            verbose: true
+                        ),
+                        sshPublisherDesc(
+                            configName: 'dc-2.lan:/usr/local',
+                            transfers: [
+                                sshTransfer(
+                                    remoteDirectory: 'bin',
+                                    removePrefix: 'dist',
+                                    sourceFiles: "dist/*",
+                                ),
+                            ],
+                            verbose: true
                         )
                     ]
                 )
